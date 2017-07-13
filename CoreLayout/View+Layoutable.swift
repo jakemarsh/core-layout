@@ -17,7 +17,7 @@ import Foundation
 #endif
 
 extension CoreLayoutViewType : Layoutable {
-  func apply(layout: ComputedLayout, offset: CGPoint = .zero) {
+  public func apply(layout: ComputedLayout, offset: CGPoint = .zero) {
     let layoutFrame = layout.frame.offsetBy(dx: offset.x, dy: offset.y)
 
     let childOffset = CGPoint.zero

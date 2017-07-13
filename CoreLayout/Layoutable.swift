@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol Layoutable {
+public protocol Layoutable {
   func apply(layout: ComputedLayout, offset: CGPoint)
 }
