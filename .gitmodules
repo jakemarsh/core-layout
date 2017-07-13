@@ -1,0 +1,3 @@
+[submodule "CoreLayout/infrastructure/vendor/yoga"]
+	path = CoreLayout/infrastructure/vendor/yoga
+	url = git@github.com:facebook/yoga.git
