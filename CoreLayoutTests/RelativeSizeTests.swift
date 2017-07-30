@@ -24,9 +24,9 @@ class RelativeSizeTests: CoreLayoutTestCase {
           identifier: "Core Layout",
           size: .relative { (options) -> CGSize in
             let string = NSAttributedString(string: "Core Layout", attributes: [
-              NSFontAttributeName : ComputedLayout.debugIdentifierFont
+              NSAttributedStringKey.font : ComputedLayout.debugIdentifierFont
             ])
-
+            
             return string.boundingRect(
               with: options.containerSize,
               options: [.usesLineFragmentOrigin, .usesFontLeading],

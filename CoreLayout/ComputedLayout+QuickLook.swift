@@ -20,7 +20,7 @@ extension ComputedLayout {
     return generateQuickLookImage()!
   }
   
-  public static let debugIdentifierFont = UIFont.monospacedDigitSystemFont(ofSize: 14.0, weight: UIFontWeightSemibold)
+  public static let debugIdentifierFont = UIFont.monospacedDigitSystemFont(ofSize: 14.0, weight: UIFont.Weight.semibold)
 
   public func generateQuickLookImage() -> DebugImageType? {
     let drawRect = frame.insetBy(dx: -8, dy: -8)
@@ -56,9 +56,9 @@ extension ComputedLayout {
           style.alignment = .center
 
           (identifier as NSString).draw(in: textRect, withAttributes: [
-            NSParagraphStyleAttributeName : style,
-            NSFontAttributeName : font,
-            NSForegroundColorAttributeName : strokeColor
+            NSAttributedStringKey.paragraphStyle : style,
+            NSAttributedStringKey.font : font,
+            NSAttributedStringKey.foregroundColor : strokeColor
           ])
         }
 
