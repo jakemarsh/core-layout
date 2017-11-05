@@ -9,18 +9,25 @@
 import Foundation
 
 #if os(iOS)
+  import UIKit
+  public typealias DebugFontType = UIFont
   public typealias DebugImageType = UIImage
 #elseif os(macOS)
+  import Cocoa
+  public typealias DebugFontType = NSFont
   public typealias DebugImageType = NSImage
 #endif
 
 extension ComputedLayout {
-//  @objc
   public func debugQuickLookObject() -> UIImage {
     return generateQuickLookImage()!
   }
   
-  public static let debugIdentifierFont = UIFont.monospacedDigitSystemFont(ofSize: 14.0, weight: UIFont.Weight.semibold)
+  #if os(iOS)
+  public static let debugIdentifierFont = DebugFontType.systemFont(ofSize: 14.0)
+  #elseif os(macOS)
+  public static let debugIdentifierFont = DebugFontType.boldSystemFont(ofSize: 14.0)
+  #endif
 
   public func generateQuickLookImage() -> DebugImageType? {
     let drawRect = frame.insetBy(dx: -8, dy: -8)

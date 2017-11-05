@@ -187,10 +187,14 @@ private class LayoutBox {
     if let maxHeight = layout.size.maximum?.height { YGNodeStyleSetMaxHeight(node, Float(maxHeight)) }
 
     if let edges = layout.overriddenPosition {
+      YGNodeStyleSetPositionType(node, .absolute)
+
       if let top = edges.top { YGNodeStyleSetPosition(node, .top, top) }
       if let start = edges.leading { YGNodeStyleSetPosition(node, .start, start) }
       if let bottom = edges.bottom { YGNodeStyleSetPosition(node, .bottom, bottom) }
       if let end = edges.trailing { YGNodeStyleSetPosition(node, .end, end) }
+    } else {
+      YGNodeStyleSetPositionType(node, .relative)
     }
 
     YGNodeStyleSetDisplay(node, layout.isIncludedInLayout ? .flex : .none)
