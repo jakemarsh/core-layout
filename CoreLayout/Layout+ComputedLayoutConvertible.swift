@@ -52,15 +52,15 @@ public struct MeasureOptions {
     var containerHeight = CGFloat.nan
 
     switch widthMode {
-    case .exactly, .atMost: containerWidth = width == .nan ? CGFloat.greatestFiniteMagnitude : CGFloat(width)
+    case .exactly, .atMost: containerWidth = CGFloat(width)
     default: break
     }
-
+    
     switch widthMode {
-    case .exactly, .atMost: containerHeight = height == .nan ? CGFloat.greatestFiniteMagnitude : CGFloat(height)
+    case .exactly, .atMost: containerHeight = CGFloat(height)
     default: break
     }
-
+    
     return CGSize(width: containerWidth, height: containerHeight)
   }
 }
