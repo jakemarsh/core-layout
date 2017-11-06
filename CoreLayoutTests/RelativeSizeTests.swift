@@ -48,7 +48,7 @@ class RelativeSizeTests: CoreLayoutTestCase {
     let computedTest = ComputedLayout(
       frame: CGRect(x: 0.0, y: 0.0, width: 164.0, height: 164.0),
       children: [
-        ComputedLayout(frame: CGRect(x: 8.0, y: 0.0, width: 82.0, height: 17.0))
+        ComputedLayout(frame: CGRect(x: 8.0, y: 0.0, width: 78.0, height: 17.0))
       ]
     )
     
