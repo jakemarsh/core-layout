@@ -33,6 +33,7 @@
 		301AB6C81EB1A00D0053C287 /* TrifectaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301AB6BD1EB1A00D0053C287 /* TrifectaTests.swift */; };
 		301AB6C91EB1A00D0053C287 /* ViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301AB6BE1EB1A00D0053C287 /* ViewTests.swift */; };
 		301AB6CA1EB1A00D0053C287 /* WrapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301AB6BF1EB1A00D0053C287 /* WrapTests.swift */; };
+		30A9D9481FB87E3E00BFF096 /* Yoga-internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 30A9D9471FB87E3E00BFF096 /* Yoga-internal.h */; };
 		30B2A69D1F175D2200D9D9B6 /* Layout+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B2A69C1F175D2200D9D9B6 /* Layout+Equatable.swift */; };
 		30B6C6801F1292CF0048AB1F /* FlexibleSizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B6C67F1F1292CF0048AB1F /* FlexibleSizeTests.swift */; };
 		30B6C6841F12A0680048AB1F /* AbsoluteSizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B6C6831F12A0680048AB1F /* AbsoluteSizeTests.swift */; };
@@ -82,6 +83,7 @@
 		301AB6BD1EB1A00D0053C287 /* TrifectaTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrifectaTests.swift; sourceTree = "<group>"; };
 		301AB6BE1EB1A00D0053C287 /* ViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewTests.swift; sourceTree = "<group>"; };
 		301AB6BF1EB1A00D0053C287 /* WrapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrapTests.swift; sourceTree = "<group>"; };
+		30A9D9471FB87E3E00BFF096 /* Yoga-internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Yoga-internal.h"; sourceTree = "<group>"; };
 		30B2A69C1F175D2200D9D9B6 /* Layout+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Layout+Equatable.swift"; sourceTree = "<group>"; };
 		30B6C67F1F1292CF0048AB1F /* FlexibleSizeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleSizeTests.swift; sourceTree = "<group>"; };
 		30B6C6831F12A0680048AB1F /* AbsoluteSizeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbsoluteSizeTests.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				301AB68D1EB032B30053C287 /* YGMacros.h */,
 				301AB68E1EB032B30053C287 /* YGNodeList.c */,
 				301AB68F1EB032B30053C287 /* YGNodeList.h */,
+				30A9D9471FB87E3E00BFF096 /* Yoga-internal.h */,
 				301AB6901EB032B30053C287 /* Yoga.c */,
 				301AB6911EB032B30053C287 /* Yoga.h */,
 			);
@@ -237,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				301AB6981EB032B30053C287 /* Yoga.h in Headers */,
+				30A9D9481FB87E3E00BFF096 /* Yoga-internal.h in Headers */,
 				301AB6961EB032B30053C287 /* YGNodeList.h in Headers */,
 				301AB6931EB032B30053C287 /* YGEnums.h in Headers */,
 				301AB6941EB032B30053C287 /* YGMacros.h in Headers */,
@@ -290,7 +294,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Jake Marsh";
 				TargetAttributes = {
 					301AB65C1EB031DD0053C287 = {
@@ -405,7 +409,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -413,7 +419,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -459,7 +469,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -467,7 +479,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -512,6 +528,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jakemarsh.core-layout";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -537,6 +554,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jakemarsh.core-layout";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

@@ -51,17 +51,21 @@ public struct MeasureOptions {
     var containerWidth = CGFloat.nan
     var containerHeight = CGFloat.nan
 
-    switch widthMode {
-    case .exactly, .atMost: containerWidth = width.isNaN ? CGFloat.greatestFiniteMagnitude : CGFloat(width)
-    default: break
-    }
+    containerWidth = width.isNaN ? CGFloat.greatestFiniteMagnitude : CGFloat(width)
+    containerHeight = height.isNaN ? CGFloat.greatestFiniteMagnitude : CGFloat(height)
 
-    switch widthMode {
-    case .exactly, .atMost: containerHeight = height.isNaN ? CGFloat.greatestFiniteMagnitude : CGFloat(height)
-    default: break
-    }
+//    switch widthMode {
+//    case .exactly, .atMost: containerWidth = width.isNaN ? CGFloat.greatestFiniteMagnitude : CGFloat(width)
+//    default: break
+//    }
+//
+//    switch heightMode {
+//    case .exactly, .atMost: containerHeight = height.isNaN ? CGFloat.greatestFiniteMagnitude : CGFloat(height)
+//    default: break
+//    }
 
     return CGSize(width: containerWidth, height: containerHeight)
+//    return CGSize(width: CGFloat(width), height: CGFloat(height))
   }
 }
 
@@ -185,6 +189,8 @@ private class LayoutBox {
 
     if let maxWidth = layout.size.maximum?.width { YGNodeStyleSetMaxWidth(node, Float(maxWidth)) }
     if let maxHeight = layout.size.maximum?.height { YGNodeStyleSetMaxHeight(node, Float(maxHeight)) }
+
+    if let aspectRatio = layout.size.aspectRatio { YGNodeStyleSetAspectRatio(node, aspectRatio) }
 
     if let edges = layout.overriddenPosition {
       YGNodeStyleSetPositionType(node, .absolute)

@@ -119,23 +119,27 @@ public struct SizeBehavior {
   public var mode: Mode
   public var minimum: WidthAndOrHeight?
   public var maximum: WidthAndOrHeight?
+  public var aspectRatio: Float?
 
   public init(mode: Mode = .flexibleShrinksButDoesntGrow) {
     self.mode = mode
     self.minimum = nil
     self.maximum = nil
+    self.aspectRatio = nil
   }
   
-  public init(mode: Mode = .flexibleShrinksButDoesntGrow, minimum: WidthAndOrHeight? = nil, maximum: WidthAndOrHeight? = nil) {
+  public init(mode: Mode = .flexibleShrinksButDoesntGrow, minimum: WidthAndOrHeight? = nil, maximum: WidthAndOrHeight? = nil, aspectRatio: Float? = nil) {
     self.mode = mode
     self.minimum = minimum
     self.maximum = maximum
+    self.aspectRatio = aspectRatio
   }
 
-  public init(mode: Mode = .flexibleShrinksButDoesntGrow, minWidth: Float? = nil, maxWidth: Float? = nil, minHeight: Float? = nil, maxHeight: Float? = nil) {
+  public init(mode: Mode = .flexibleShrinksButDoesntGrow, minWidth: Float? = nil, maxWidth: Float? = nil, minHeight: Float? = nil, maxHeight: Float? = nil, aspectRatio: Float? = nil) {
     self.mode = mode
     self.minimum = WidthAndOrHeight(width: minWidth, height: minHeight)
     self.maximum = WidthAndOrHeight(width: maxWidth, height: maxHeight)
+    self.aspectRatio = aspectRatio
   }
 
   public static func absolute(width: Float? = nil, height: Float? = nil) -> SizeBehavior {
@@ -150,17 +154,17 @@ public struct SizeBehavior {
     return SizeBehavior(mode: .flexible(units: units))
   }
 
-  public static func flexible(units: UInt = 1, minimum: WidthAndOrHeight? = nil, maximum: WidthAndOrHeight? = nil) -> SizeBehavior {
-    return SizeBehavior(mode: .flexible(units: units), minimum: minimum, maximum: maximum)
+  public static func flexible(units: UInt = 1, minimum: WidthAndOrHeight? = nil, maximum: WidthAndOrHeight? = nil, aspectRatio: Float? = nil) -> SizeBehavior {
+    return SizeBehavior(mode: .flexible(units: units), minimum: minimum, maximum: maximum, aspectRatio: aspectRatio)
   }
 
-  public static func flexible(units: UInt = 1, minWidth: Float? = nil, maxWidth: Float? = nil, minHeight: Float? = nil, maxHeight: Float? = nil) -> SizeBehavior {
-    return SizeBehavior(mode: .flexible(units: units), minWidth: minWidth, maxWidth: maxWidth, minHeight: minHeight, maxHeight: maxHeight)
+  public static func flexible(units: UInt = 1, minWidth: Float? = nil, maxWidth: Float? = nil, minHeight: Float? = nil, maxHeight: Float? = nil, aspectRatio: Float? = nil) -> SizeBehavior {
+    return SizeBehavior(mode: .flexible(units: units), minWidth: minWidth, maxWidth: maxWidth, minHeight: minHeight, maxHeight: maxHeight, aspectRatio: aspectRatio)
   }
 }
 
 public struct Edges {
-  var top: Float?, leading: Float?, bottom: Float?, trailing: Float? = nil
+  public var top: Float?, leading: Float?, bottom: Float?, trailing: Float? = nil
 
   public init(all: Float) { top = all; leading = all; bottom = all; trailing = all }
 
