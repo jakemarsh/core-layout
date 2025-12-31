@@ -852,14 +852,38 @@ open class MyAppCostume : Costume {
 
 Cheers.
 
-## Building Core Layout
+## Requirements
 
-- `git clone https://github.com/jakemarsh/core-layout.git`
-- `cd core-layout`
-- `git submodule init && git submodule update --recursive`
-- Open **Xcode**, Build.
+- iOS 15.0+ / macOS 12.0+ / tvOS 15.0+ / watchOS 8.0+
+- Swift 5.9+
+- Xcode 15+
 
+## Installation
 
-## Installation ([Carthage](https://github.com/Carthage/Carthage))
+### Swift Package Manager (Recommended)
+
+Add CoreLayout to your project via Xcode:
+
+1. File → Add Package Dependencies...
+2. Enter: `https://github.com/jakemarsh/core-layout`
+
+Or add to your `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/jakemarsh/core-layout", from: "2.0.0")
+]
+```
+
+### Carthage
 
 Add `github "jakemarsh/core-layout"` to your `Cartfile`
+
+## Building Core Layout
+
+```bash
+git clone https://github.com/jakemarsh/core-layout.git
+cd core-layout
+swift build
+swift test
+```
